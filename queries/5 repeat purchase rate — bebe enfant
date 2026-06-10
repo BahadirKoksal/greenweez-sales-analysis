@@ -1,0 +1,22 @@
+-- order and customer counts per subcategory
+SELECT
+  category_2,
+  category_3,
+  COUNT(DISTINCT(orders_id)) AS nb_orders,
+  COUNT(DISTINCT(customers_id)) AS nb_customers
+FROM course14.gwz_sales
+WHERE category_1 = "Bébé & Enfant"
+GROUP BY category_2, category_3;
+
+-- repeat purchase rate: nb_orders / nb_customers per subcategory
+-- finding: baby food and formula drive the highest loyalty (2x+ reorder rate)
+SELECT
+  category_2,
+  category_3,
+  COUNT(DISTINCT orders_id) AS nb_orders,
+  COUNT(DISTINCT customers_id) AS nb_customers,
+  (COUNT(DISTINCT orders_id) / COUNT(DISTINCT customers_id)) AS nb_orders_per_customer
+FROM course14.gwz_sales
+WHERE category_1 = 'Bébé & Enfant'
+GROUP BY category_2, category_3
+ORDER BY nb_orders_per_customer DESC;
