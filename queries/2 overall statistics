@@ -1,0 +1,9 @@
+-- overall summary statistics for the entire dataset
+SELECT
+  COUNT(DISTINCT(orders_id)) AS nb_orders,
+  COUNT(DISTINCT(products_id)) AS nb_products,
+  COUNT(DISTINCT(customers_id)) AS nb_customers,
+  SUM(turnover) AS sum_turnover,
+  SUM(purchase_cost) AS sum_purchase_cost,
+  SUM(qty) AS sum_qty
+FROM course14.gwz_sales;
