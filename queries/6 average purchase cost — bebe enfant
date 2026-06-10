@@ -1,0 +1,11 @@
+-- average purchase cost and product count per subcategory
+-- finding: baby safety equipment has the highest avg cost at €117.88
+SELECT
+  category_2,
+  category_3,
+  COUNT(DISTINCT products_id) AS nb_products,
+  AVG(purchase_cost) AS avg_purchase_cost
+FROM course14.gwz_sales
+WHERE category_1 = 'Bébé & Enfant'
+GROUP BY category_2, category_3
+ORDER BY avg_purchase_cost DESC;
