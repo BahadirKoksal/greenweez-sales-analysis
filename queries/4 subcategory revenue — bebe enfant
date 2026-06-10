@@ -1,0 +1,10 @@
+-- revenue breakdown by subcategory within Bébé & Enfant
+-- finding: diapers and infant formula dominate the top spots
+SELECT
+  category_2,
+  category_3,
+  SUM(turnover) AS sum_turnover
+FROM course14.gwz_sales
+WHERE category_1 = "Bébé & Enfant"
+GROUP BY category_2, category_3
+ORDER BY sum_turnover DESC;
