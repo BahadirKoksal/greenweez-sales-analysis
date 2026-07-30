@@ -18,7 +18,7 @@ Greenweez's product team needed a clear picture of category-level performance. T
 
 ## 🗃️ Dataset
 
-One table from BigQuery (`course14` dataset):
+One table from BigQuery:
 
 | Table | Rows | Description |
 |-------|------|-------------|
